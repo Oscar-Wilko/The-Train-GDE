@@ -157,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1554895021
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.5377358, g: 0.5266696, b: 0.5157529, a: 1}
   m_FlipX: 0
@@ -183,10 +183,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage_per_second: 0
   damage_per_hit: 0
+  min_reload_time: 0
   fire_range: 0
   level: 0
   reload_timer: 0
   turret_obj: {fileID: 0}
+  barrel_obj: {fileID: 0}
   bullet_prefab: {fileID: 8700331782491368260, guid: e44f9680c93166443a7eb2c7f535a7b8, type: 3}
 --- !u!1 &7114955572340116948
 GameObject:
@@ -198,6 +200,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7114955572340116951}
   - component: {fileID: 7114955572340116950}
+  - component: {fileID: 6005679196928637195}
+  - component: {fileID: 5191031445330802137}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -272,6 +276,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6005679196928637195
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7114955572340116948}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &5191031445330802137
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7114955572340116948}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &9201264380908686589
 GameObject:
   m_ObjectHideFlags: 0
