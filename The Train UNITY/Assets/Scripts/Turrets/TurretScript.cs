@@ -13,13 +13,12 @@ public class TurretScript : MonoBehaviour
     }
 
     public float damage_per_second;
-    public float damage_per_hit;
+    public int damage_per_hit;
     private FireRateState fire_rate;
     public float min_reload_time;
     public float fire_range;
     public int level;
     public float reload_timer;
-    public GameObject turret_obj;
     public GameObject barrel_obj;
     public GameObject bullet_prefab;
     /*
@@ -68,6 +67,7 @@ public class TurretScript : MonoBehaviour
             Vector3 pos_dif = barrel_obj.transform.position - this.transform.position;
             pos_dif.Normalize();
             bullet.GetComponent<BulletScript>().move_dir = pos_dif;
+            bullet.GetComponent<BulletScript>().damage = damage_per_hit;
             reload_timer = 0;
         }
     }

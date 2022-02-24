@@ -5,31 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial Scene.unity
     guid: ea4bd6de36c32134d9b6980c579e3ba2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Post Fight Planning Scene (Station).unity
     guid: f2919e44bb9dd194ebf4321a83873037
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Post Fight Planning Scene (Tracks).unity
     guid: c1b4c4e9c66be5842852c31dee8c38c2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Route Selector Scene.unity
     guid: 6ae0a3279cdf53246ac4f6a597ae9796
   - enabled: 1
     path: Assets/Scenes/Gameplay Scene (Tracks).unity
     guid: dd268b6072f3752498016a6e2e365c2b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gameplay Scene (Station).unity
     guid: 965fa4e6febd3b24e8bf315d99922d0f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game Lost Scene.unity
     guid: 4fce8c54de1ae8d41b924d51910fe630
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game Won Scene.unity
     guid: ada29de9e58de53468fb6409bc8edca6
   m_configObjects: {}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public int damage;
     public float bullet_speed;
     public Vector3 move_dir;
 
@@ -16,6 +17,15 @@ public class BulletScript : MonoBehaviour
         }
         if (this.transform.position.y > 6 || this.transform.position.y < -6)
         {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Zombie")
+        {
+            col.gameObject.GetComponentInParent<ZombieScript>().hit_points -= damage;
             Destroy(this.gameObject);
         }
     }
