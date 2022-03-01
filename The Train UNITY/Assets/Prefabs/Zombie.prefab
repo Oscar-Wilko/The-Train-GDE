@@ -46,9 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e50f62df0ba9ee419250112da7c9aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_manager: {fileID: 0}
   carriage_in_range: 0
   hit_points: 3
   move_speed: 0.5
+  attack_damage: 1
   attack_speed: 1
   attack_timer: 0
   attack_range: 1

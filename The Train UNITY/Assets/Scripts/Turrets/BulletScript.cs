@@ -7,6 +7,12 @@ public class BulletScript : MonoBehaviour
     public int damage;
     public float bullet_speed;
     public Vector3 move_dir;
+    private GameObject sound_manager;
+
+    void Start()
+    {
+        sound_manager = GameObject.FindGameObjectWithTag("SoundManager");
+    }
 
     void FixedUpdate()
     {
@@ -25,6 +31,7 @@ public class BulletScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Zombie")
         {
+            sound_manager.GetComponent<SoundManager>().PlaySound(0, this.transform.position);
             col.gameObject.GetComponentInParent<ZombieScript>().hit_points -= damage;
             Destroy(this.gameObject);
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ZombieSpawnScript : MonoBehaviour
 {
@@ -17,10 +18,24 @@ public class ZombieSpawnScript : MonoBehaviour
 
     void Update()
     {
+        GameObject[] zombies = GameObject.FindGameObjectsWithTag("Zombie");
         spawn_timer += Time.deltaTime;
         if (spawn_timer >= (1/spawn_frequency) && Random.Range(0,10) >= 8 && zombies_spawned_this_wave < zombies_per_wave)
         {
             Spawn();
+        }
+        else if (zombies.Length == 0 && zombies_spawned_this_wave >= zombies_per_wave)
+        {
+            if (wave_counter < max_waves)
+            {
+                wave_counter++;
+                zombies_spawned_this_wave = 0;
+                spawn_timer = -1;
+            }
+            else
+            {
+                StartCoroutine(LoadSceneDelay());
+            }
         }
     }
 
@@ -42,5 +57,11 @@ public class ZombieSpawnScript : MonoBehaviour
         }
         Vector3 spawn_pos = new Vector3(temp_x, temp_y, 0);
         GameObject zombie_instance = Instantiate(zombie_prefab, spawn_pos, Quaternion.identity);
+    }
+
+    IEnumerator LoadSceneDelay()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Post Fight Planning Scene (Tracks)", LoadSceneMode.Single);
     }
 }

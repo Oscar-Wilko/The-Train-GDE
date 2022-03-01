@@ -5,15 +5,21 @@ using UnityEngine;
 public class ZombieScript : MonoBehaviour
 {
     private GameObject designated_carriage;
+    public GameObject game_manager;
     public bool carriage_in_range = false;
     public int hit_points;
     public float move_speed;
+    public float attack_damage;
     public float attack_speed;
     public float attack_timer;
     public float attack_range;
     public CircleCollider2D attack_range_hitbox;
+    private GameObject sound_manager;
+
     void Start()
     {
+        sound_manager = GameObject.FindGameObjectWithTag("SoundManager");
+        game_manager = GameObject.FindGameObjectWithTag("GameController");
         attack_range_hitbox.radius = attack_range * 4;
         GameObject[] carriages = GameObject.FindGameObjectsWithTag("Carriage");
         float closest_carriage_dist = 100;
@@ -49,6 +55,7 @@ public class ZombieScript : MonoBehaviour
     public void Die()
     {
         //stuff later
+        sound_manager.GetComponent<SoundManager>().PlaySound(2, this.transform.position);
         Destroy(this.gameObject);
     }
 
@@ -57,6 +64,8 @@ public class ZombieScript : MonoBehaviour
         if (attack_timer > attack_speed)
         {
             //Carriage takes damage
+            sound_manager.GetComponent<SoundManager>().PlaySound(5, this.transform.position);
+            game_manager.GetComponent<GameManager>().train_hp = game_manager.GetComponent<GameManager>().train_hp - attack_damage;
             attack_timer = 0;
         }
     }

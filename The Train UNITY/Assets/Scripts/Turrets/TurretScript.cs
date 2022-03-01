@@ -21,6 +21,12 @@ public class TurretScript : MonoBehaviour
     public float reload_timer;
     public GameObject barrel_obj;
     public GameObject bullet_prefab;
+    private GameObject sound_manager;
+
+    void Start()
+    {
+        sound_manager = GameObject.FindGameObjectWithTag("SoundManager");
+    }
     /*
     void Start()
     {
@@ -63,6 +69,7 @@ public class TurretScript : MonoBehaviour
     {
         if (reload_timer >= min_reload_time)
         {
+            sound_manager.GetComponent<SoundManager>().PlaySound(1, this.transform.position);
             GameObject bullet = Instantiate(bullet_prefab, barrel_obj.transform.position, this.transform.rotation);
             Vector3 pos_dif = barrel_obj.transform.position - this.transform.position;
             pos_dif.Normalize();
