@@ -191,12 +191,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage_per_second: 1
   damage_per_hit: 1
-  min_reload_time: 0.5
-  fire_range: 1
+  min_reload_time: 0.25
+  fire_range: 6
   level: 1
   reload_timer: 1
   barrel_obj: {fileID: 7221224612743081119}
   bullet_prefab: {fileID: 8700331782491368260, guid: e44f9680c93166443a7eb2c7f535a7b8, type: 3}
+--- !u!114 &7850114519603530071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139442661456278970}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c05fe0502ed8ca4bad47150eb33f021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tur_script: {fileID: 0}
 --- !u!1001 &4250357346226714211
 PrefabInstance:
   m_ObjectHideFlags: 0

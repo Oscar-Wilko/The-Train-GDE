@@ -192,7 +192,7 @@ MonoBehaviour:
   damage_per_second: 1
   damage_per_hit: 1
   min_reload_time: 0.5
-  fire_range: 1
+  fire_range: 4
   level: 1
   reload_timer: 1
   barrel_obj: {fileID: 7221224612743081119}
