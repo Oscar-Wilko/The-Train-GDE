@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 73370332275043195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.075, y: 0.075, z: 1}
   m_Children:
   - {fileID: 2225339845913611693}
   m_Father: {fileID: 0}
@@ -54,6 +54,7 @@ MonoBehaviour:
   attack_speed: 1
   attack_timer: 0
   attack_range: 1
+  scrap_value: 10
   attack_range_hitbox: {fileID: 8133029562892622952}
 --- !u!212 &6761053123447829050
 SpriteRenderer:

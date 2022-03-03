@@ -13,11 +13,13 @@ public class UIHandler : MonoBehaviour
         {
             settings_obj.SetActive(true);
             ui_obj.SetActive(false);
+            Time.timeScale = 0;
         }
         else
         {
             settings_obj.SetActive(false);
             ui_obj.SetActive(true);
+            Time.timeScale = 1;
         }
     }
 

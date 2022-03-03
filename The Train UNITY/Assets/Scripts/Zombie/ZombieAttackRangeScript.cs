@@ -12,4 +12,12 @@ public class ZombieAttackRangeScript : MonoBehaviour
             parent.GetComponent<ZombieScript>().carriage_in_range = true;
         }
     }
+    
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.tag == "Carriage")
+        {
+            parent.GetComponent<ZombieScript>().carriage_in_range = false;
+        }
+    }
 }

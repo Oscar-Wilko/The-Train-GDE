@@ -13,6 +13,7 @@ public class ZombieScript : MonoBehaviour
     public float attack_speed;
     public float attack_timer;
     public float attack_range;
+    public int scrap_value;
     public CircleCollider2D attack_range_hitbox;
     private GameObject sound_manager;
 
@@ -56,6 +57,7 @@ public class ZombieScript : MonoBehaviour
     {
         //stuff later
         sound_manager.GetComponent<SoundManager>().PlaySound(2, this.transform.position);
+        game_manager.GetComponent<GameManager>().scrap += scrap_value;
         Destroy(this.gameObject);
     }
 
