@@ -30,8 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.34, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children:
-  - {fileID: 4288804944004898434}
   - {fileID: 4877381905487305088}
+  - {fileID: 4288804944004898434}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -197,6 +197,7 @@ MonoBehaviour:
   reload_timer: 1
   barrel_obj: {fileID: 7221224612743081119}
   bullet_prefab: {fileID: 8700331782491368260, guid: e44f9680c93166443a7eb2c7f535a7b8, type: 3}
+  click_coll: {fileID: 1762667069869567952}
 --- !u!1001 &4250357346226714211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: f5180f1cb8fdb394fa2c8956fbe3394f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: f5180f1cb8fdb394fa2c8956fbe3394f, type: 3}
       propertyPath: m_LocalScale.x
@@ -309,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 5be898a268b238c40a7f8c6894cde873, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 5be898a268b238c40a7f8c6894cde873, type: 3}
       propertyPath: m_LocalScale.x

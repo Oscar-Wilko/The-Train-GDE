@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public int damage;
+    public float damage;
     public float bullet_speed;
     public Vector3 move_dir;
     private GameObject sound_manager;

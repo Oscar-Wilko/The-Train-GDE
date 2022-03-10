@@ -197,6 +197,7 @@ MonoBehaviour:
   reload_timer: 1
   barrel_obj: {fileID: 7221224612743081119}
   bullet_prefab: {fileID: 8700331782491368260, guid: e44f9680c93166443a7eb2c7f535a7b8, type: 3}
+  click_coll: {fileID: 648720372706899243}
 --- !u!114 &7850114519603530071
 MonoBehaviour:
   m_ObjectHideFlags: 0

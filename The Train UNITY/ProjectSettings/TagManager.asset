@@ -8,6 +8,7 @@ TagManager:
   - Carriage
   - Bullet
   - SoundManager
+  - UIHandler
   layers:
   - Default
   - TransparentFX
@@ -59,6 +60,9 @@ TagManager:
     locked: 0
   - name: Zombies
     uniqueID: 4235439071
+    locked: 0
+  - name: Particles
+    uniqueID: 3370968695
     locked: 0
   - name: UI
     uniqueID: 3142311353

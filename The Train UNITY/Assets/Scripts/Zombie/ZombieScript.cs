@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ZombieScript : MonoBehaviour
 {
-    private GameObject designated_carriage;
+    public GameObject designated_carriage;
     public GameObject game_manager;
     public bool carriage_in_range = false;
-    public int hit_points;
+    public float hit_points;
     public float move_speed;
     public float attack_damage;
     public float attack_speed;
@@ -23,7 +23,7 @@ public class ZombieScript : MonoBehaviour
         game_manager = GameObject.FindGameObjectWithTag("GameController");
         attack_range_hitbox.radius = attack_range * 4;
         GameObject[] carriages = GameObject.FindGameObjectsWithTag("Carriage");
-        float closest_carriage_dist = 100;
+        float closest_carriage_dist = 1000;
         foreach (GameObject carriage in carriages)
         {
             Vector3 distance_vec = carriage.transform.position - this.transform.position;
