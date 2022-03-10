@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - SoundManager
   - UIHandler
+  - Upgrades
   layers:
   - Default
   - TransparentFX

@@ -26,14 +26,16 @@ public class UIHandler : MonoBehaviour
         {
             settings_obj.SetActive(false);
             ui_obj.SetActive(true);
-            Time.timeScale = 1;
             if (upgrading)
             {
+                upgrade_obj.transform.position = Camera.main.WorldToScreenPoint(current_carriage_selected.transform.position);
                 upgrade_obj.SetActive(true);
+                Time.timeScale = 0.1f;
             }
             else
             {
                 upgrade_obj.SetActive(false);
+                Time.timeScale = 1;
             }
             if (prompt_provided)
             {

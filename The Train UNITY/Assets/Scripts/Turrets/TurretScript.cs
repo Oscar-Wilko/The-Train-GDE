@@ -18,12 +18,15 @@ public class TurretScript : MonoBehaviour
     public float min_reload_time;
     public float fire_range;
     public int level;
+    public int turret_number;
     public float reload_timer;
     public GameObject barrel_obj;
     public GameObject bullet_prefab;
     private GameObject ui_handler;
     private GameObject sound_manager;
     private GameObject game_manager;
+    private GameObject upgrade_ui;
+    private GameObject data_handler;
     public BoxCollider2D click_coll;
 
     void Start()
@@ -31,6 +34,11 @@ public class TurretScript : MonoBehaviour
         sound_manager = GameObject.FindGameObjectWithTag("SoundManager");
         ui_handler = GameObject.FindGameObjectWithTag("UIHandler");
         game_manager = GameObject.FindGameObjectWithTag("GameController");
+        upgrade_ui = GameObject.FindGameObjectWithTag("Upgrades");
+        data_handler = GameObject.FindGameObjectWithTag("DataHandler");
+        level = data_handler.GetComponent<GameDataScript>().turretdata[turret_number].level;
+        min_reload_time = min_reload_time * Mathf.Pow(0.8f, level);
+        damage_per_hit = damage_per_hit * Mathf.Pow(1.5f, level);
     }
     /*
     void Start()
@@ -65,6 +73,7 @@ public class TurretScript : MonoBehaviour
                 {
                     ui_handler.GetComponent<UIHandler>().upgrading = true;
                     ui_handler.GetComponent<UIHandler>().current_carriage_selected = this.gameObject;
+                    upgrade_ui.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
                 }
             }
         }
@@ -77,6 +86,7 @@ public class TurretScript : MonoBehaviour
             game_manager.GetComponent<GameManager>().scrap -= 100;
             min_reload_time = min_reload_time * 0.8f;
             damage_per_hit = damage_per_hit * 1.5f;
+            level++;
         }
     }
 
@@ -105,5 +115,10 @@ public class TurretScript : MonoBehaviour
             bullet.GetComponent<BulletScript>().damage = damage_per_hit;
             reload_timer = 0;
         }
+    }
+
+    public void OnDisable()
+    {
+        data_handler.GetComponent<GameDataScript>().SetTurData(turret_number, level, "normal");
     }
 }
