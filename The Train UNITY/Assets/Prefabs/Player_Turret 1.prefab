@@ -189,11 +189,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e947e9a3956386f4fa878567c3be04f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turret_sprites:
+  - {fileID: 3286163911610860551, guid: f5180f1cb8fdb394fa2c8956fbe3394f, type: 3}
+  - {fileID: 3286163911610860551, guid: e0f29645a2324cd43a0be058b6b2dafe, type: 3}
+  - {fileID: 3286163911610860551, guid: 95cc8a3112384894baaab153fc478fb2, type: 3}
+  - {fileID: 3286163911610860551, guid: a35486b9952c4b845a20d163ce318d5c, type: 3}
   damage_per_second: 1
   damage_per_hit: 1
   min_reload_time: 0.25
   fire_range: 10
   level: 1
+  type: 
+  turret_number: 0
   reload_timer: 1
   barrel_obj: {fileID: 7221224612743081119}
   bullet_prefab: {fileID: 8700331782491368260, guid: e44f9680c93166443a7eb2c7f535a7b8, type: 3}
@@ -218,6 +225,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7114955572340116951}
     m_Modifications:
+    - target: {fileID: -7871556540511652807, guid: f5180f1cb8fdb394fa2c8956fbe3394f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3286163911610860551, guid: f5180f1cb8fdb394fa2c8956fbe3394f, type: 3}
     - target: {fileID: -7871556540511652807, guid: f5180f1cb8fdb394fa2c8956fbe3394f, type: 3}
       propertyPath: m_SortingLayer
       value: 2

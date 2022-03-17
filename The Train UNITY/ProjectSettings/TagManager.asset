@@ -10,6 +10,9 @@ TagManager:
   - SoundManager
   - UIHandler
   - Upgrades
+  - DataHandler
+  - Tick
+  - Non_Ticks
   layers:
   - Default
   - TransparentFX

@@ -13,16 +13,19 @@ public class GameManager : MonoBehaviour
     public Toggle toggle_auto_player;
     public GameObject player_tur;
     public TextMeshProUGUI scrap_text;
-    public float scrap;
+    public GameDataScript game_data;
+    public int scrap;
 
     void Start()
     {
-
+        game_data = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<GameDataScript>();
+        scrap = game_data.scrap;
     }
 
     void Update()
     {
         scrap_text.text = scrap.ToString();
+        game_data.scrap = scrap;
         player_tur.GetComponent<PlayerController>().enabled = !toggle_auto_player.isOn;
         player_tur.GetComponent<AutoController>().enabled = toggle_auto_player.isOn;
         hp_slider.transform.localScale = new Vector3 (train_hp / max_train_hp,1,1);
