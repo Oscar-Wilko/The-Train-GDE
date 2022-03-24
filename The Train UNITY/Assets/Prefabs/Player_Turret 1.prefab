@@ -204,6 +204,9 @@ MonoBehaviour:
   reload_timer: 1
   barrel_obj: {fileID: 7221224612743081119}
   bullet_prefab: {fileID: 8700331782491368260, guid: e44f9680c93166443a7eb2c7f535a7b8, type: 3}
+  fire_prefab: {fileID: 8700331782491368260, guid: e86ca8ba9d2d5e94f9a95aa0a9321426, type: 3}
+  mortar_prefab: {fileID: 8700331782491368260, guid: 510efafd98bcb3c4bb8c021cefcc9a1d, type: 3}
+  artillery_bullet_prefab: {fileID: 8700331782491368260, guid: 1b81706817e38c746864d0b9da075136, type: 3}
   click_coll: {fileID: 648720372706899243}
 --- !u!114 &7850114519603530071
 MonoBehaviour:
