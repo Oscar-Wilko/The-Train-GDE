@@ -13,6 +13,8 @@ TagManager:
   - DataHandler
   - Tick
   - Non_Ticks
+  - Soldier
+  - PersonWalk
   layers:
   - Default
   - TransparentFX

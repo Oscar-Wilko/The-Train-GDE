@@ -7,6 +7,12 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject main_menu_object;
     public GameObject select_mode_object;
+    public GameObject data_handler;
+
+    void Start()
+    {
+        data_handler = GameObject.FindGameObjectWithTag("DataHandler");
+    }
 
     public void NewGameButton()
     {
@@ -22,11 +28,17 @@ public class MenuManager : MonoBehaviour
     public void CasualOrIdleButton()
     {
         SceneManager.LoadScene("Tutorial Scene", LoadSceneMode.Single);
+        ResetData();
     }
 
     public void BackButton()
     {
         main_menu_object.SetActive(true);
         select_mode_object.SetActive(false);
+    }
+
+    public void ResetData()
+    {
+        data_handler.GetComponent<GameDataScript>().Reset();
     }
 }

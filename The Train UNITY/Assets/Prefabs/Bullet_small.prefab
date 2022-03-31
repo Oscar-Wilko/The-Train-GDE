@@ -9,11 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5469379104686966654}
-  - component: {fileID: 4751254339128498767}
-  - component: {fileID: 3862994382826225491}
-  - component: {fileID: 5983088385914985034}
+  - component: {fileID: 2339059416575532196}
+  - component: {fileID: 1083158627312165896}
+  - component: {fileID: 3489443138447367471}
+  - component: {fileID: 767323579161636755}
+  - component: {fileID: 7410678772677152866}
   m_Layer: 0
-  m_Name: Mortar Shell
+  m_Name: Bullet_small
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8700331782491368260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.225, y: 0.225, z: 1}
+  m_LocalPosition: {x: 2.947606, y: -0.48344654, z: 0}
+  m_LocalScale: {x: -0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4751254339128498767
+--- !u!212 &2339059416575532196
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,18 +76,18 @@ SpriteRenderer:
   m_SortingLayerID: 909995607
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3286163911610860551, guid: ef1a25b71f08e7e4c92b1c54c84ada74, type: 3}
+  m_Sprite: {fileID: 3286163911610860551, guid: 90306f560cabdae4fa533da13fc25e6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.7013884, y: 4.7051}
+  m_Size: {x: 1.2686, y: 0.7434}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3862994382826225491
+--- !u!114 &1083158627312165896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,17 +96,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 8700331782491368260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d05931ab45228f478519e60cacc9ee7, type: 3}
+  m_Script: {fileID: 11500000, guid: d049db69d8407a54c81dc609bbb8f4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  bullet_speed: 2
+  damage: 1
+  bullet_speed: 5
   move_dir: {x: 0, y: 0, z: 0}
-  end_pos: {x: 0, y: 0, z: 0}
-  explosion_prefab: {fileID: 3628790486103067625, guid: 2a99ebc8dea789e4a98b967fbaee02ee, type: 3}
-  start_dist: 0
-  start_scale: 0
---- !u!96 &5983088385914985034
+--- !u!61 &3489443138447367471
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700331782491368260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2686, y: 0.7434}
+    newSize: {x: 1.2686, y: 0.7434}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2686, y: 0.7434}
+  m_EdgeRadius: 0
+--- !u!50 &767323579161636755
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700331782491368260}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!96 &7410678772677152866
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -155,13 +200,13 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.064106934
-        inSlope: -0.20797977
-        outSlope: -0.20797977
+        value: 0.02991616
+        inSlope: -0.19332033
+        outSlope: -0.19332033
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.7896695
+        outWeight: 0.99446696
       - serializedVersion: 3
         time: 0.35564232
         value: 0
@@ -176,7 +221,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+      key0: {r: 1, g: 0.9235637, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

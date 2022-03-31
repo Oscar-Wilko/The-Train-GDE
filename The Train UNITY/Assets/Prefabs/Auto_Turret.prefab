@@ -197,7 +197,7 @@ MonoBehaviour:
   damage_per_second: 1
   damage_per_hit: 1
   min_reload_time: 0.5
-  fire_range: 4
+  fire_range: 6
   level: 1
   type: 
   turret_number: 0
