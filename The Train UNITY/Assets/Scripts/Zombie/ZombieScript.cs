@@ -6,6 +6,7 @@ public class ZombieScript : MonoBehaviour
 {
     public GameObject designated_carriage;
     public GameObject game_manager;
+    public GameObject data_handler;
     public bool carriage_in_range = false;
     public float hit_points;
     public float move_speed;
@@ -21,6 +22,7 @@ public class ZombieScript : MonoBehaviour
     {
         sound_manager = GameObject.FindGameObjectWithTag("SoundManager");
         game_manager = GameObject.FindGameObjectWithTag("GameController");
+        data_handler = GameObject.FindGameObjectWithTag("DataHandler");
         attack_range_hitbox.radius = attack_range * 4;
         GameObject[] carriages = GameObject.FindGameObjectsWithTag("Carriage");
         float closest_carriage_dist = 1000;

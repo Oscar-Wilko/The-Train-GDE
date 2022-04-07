@@ -28,7 +28,14 @@ public class PersonWalkScript : MonoBehaviour
                     closest_zombie_dist = distance;
                 }
             }
-            Walk(closest_zombie_vec);
+            if (closest_zombie_vec == new Vector3(0, 0, 0))
+            {
+                Walk(spawn.position);
+            }
+            else
+            {
+                Walk(closest_zombie_vec);
+            }
         }
         else
         {

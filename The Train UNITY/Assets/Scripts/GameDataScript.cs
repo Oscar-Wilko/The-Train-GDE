@@ -13,6 +13,7 @@ public class GameDataScript : MonoBehaviour
     private int[] start_tur_lvl;
     private string[] start_tur_type;
     private int[] start_per_lvl;
+    private int zombies_killed;
 
     void Awake()
     {
@@ -20,6 +21,7 @@ public class GameDataScript : MonoBehaviour
         start_tur_type = turret_types;
         start_tur_lvl = turret_levels;
         start_per_lvl = person_levels;
+        zombies_killed = 0;
     }
 
     public void SetTurData(int num, int lvl, string type)
@@ -40,5 +42,10 @@ public class GameDataScript : MonoBehaviour
         turret_levels = start_tur_lvl;
         turret_types = start_tur_type;
         person_levels = start_per_lvl;
+    }
+
+    public void ZombieKilled()
+    {
+        zombies_killed++;
     }
 }
