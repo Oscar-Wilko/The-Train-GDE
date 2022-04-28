@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public float train_hp;
     public float max_train_hp;
+    public GameObject tutorial_ui;
     public GameObject hp_slider;
     public Toggle toggle_auto_player;
     public GameObject player_tur;
@@ -24,6 +25,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (!game_data.tutorial_check)
+        {
+            tutorial_ui.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            tutorial_ui.SetActive(false);
+        }
         scrap_text.text = scrap.ToString();
         game_data.scrap = scrap;
         player_tur.GetComponent<PlayerController>().enabled = !toggle_auto_player.isOn;

@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
 
     public void CasualOrIdleButton()
     {
-        SceneManager.LoadScene("Tutorial Scene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Gameplay Scene (Tracks)", LoadSceneMode.Single);
         ResetData();
     }
 

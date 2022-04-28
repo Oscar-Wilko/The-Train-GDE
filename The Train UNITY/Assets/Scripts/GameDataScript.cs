@@ -14,9 +14,11 @@ public class GameDataScript : MonoBehaviour
     private string[] start_tur_type;
     private int[] start_per_lvl;
     private int zombies_killed;
+    public bool tutorial_check;
 
     void Awake()
     {
+        tutorial_check = false;
         DontDestroyOnLoad(transform.gameObject);
         start_tur_type = turret_types;
         start_tur_lvl = turret_levels;
@@ -38,6 +40,7 @@ public class GameDataScript : MonoBehaviour
 
     public void Reset()
     {
+        tutorial_check = false;
         scrap = 100;
         turret_levels = start_tur_lvl;
         turret_types = start_tur_type;

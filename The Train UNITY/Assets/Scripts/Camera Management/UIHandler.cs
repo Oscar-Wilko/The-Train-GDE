@@ -20,9 +20,11 @@ public class UIHandler : MonoBehaviour
     public string selected_type;
     public GameObject[] ticks;
     public GameObject[] non_ticks;
+    private GameDataScript game_data;
 
     void Start()
     {
+        game_data = GameObject.FindGameObjectWithTag("DataHandler").GetComponent<GameDataScript>();
         ticks = GameObject.FindGameObjectsWithTag("Tick");
         non_ticks = GameObject.FindGameObjectsWithTag("Non_Ticks");
         foreach (GameObject tick in ticks)
@@ -78,7 +80,14 @@ public class UIHandler : MonoBehaviour
                     non_tick.SetActive(true);
                 }
 
-                Time.timeScale = 1;
+                if (!game_data.tutorial_check)
+                {
+                    Time.timeScale = 0;
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                }
             }
             if (prompt_provided)
             {
