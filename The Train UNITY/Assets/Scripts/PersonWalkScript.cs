@@ -48,11 +48,26 @@ public class PersonWalkScript : MonoBehaviour
         Vector3 pos_diff = zombie_vec - this.transform.position;
         pos_diff.Normalize();
         this.transform.position = this.transform.position + (pos_diff * Time.deltaTime * move_speed);
+        if (this.transform.position.x < min_bound_x)
+        {
+            this.transform.position = new Vector3(min_bound_x, this.transform.position.y, 0);
+        }
+        else if (this.transform.position.x > max_bound_x)
+        {
+            this.transform.position = new Vector3(max_bound_x, this.transform.position.y, 0);
+        }
+        if (this.transform.position.x < min_bound_y)
+        {
+            this.transform.position = new Vector3(min_bound_y, this.transform.position.y, 0);
+        }
+        else if (this.transform.position.x > max_bound_y)
+        {
+            this.transform.position = new Vector3(max_bound_y, this.transform.position.y, 0);
+        }
     }
 
     public bool InBox()
     {
-        Debug.Log(this.transform.localPosition);
         if (this.transform.localPosition.x < max_bound_x && this.transform.localPosition.x > min_bound_x)
         {
             if (this.transform.localPosition.y < max_bound_y && this.transform.localPosition.y > min_bound_y)

@@ -68,8 +68,11 @@ public class ZombieScript : MonoBehaviour
         if (attack_timer > attack_speed)
         {
             //Carriage takes damage
-            sound_manager.GetComponent<SoundManager>().PlaySound(5, this.transform.position);
-            game_manager.GetComponent<GameManager>().train_hp = game_manager.GetComponent<GameManager>().train_hp - attack_damage;
+            if (!game_manager.GetComponent<GameManager>().forcefield_active)
+            {
+                sound_manager.GetComponent<SoundManager>().PlaySound(5, this.transform.position);
+                game_manager.GetComponent<GameManager>().train_hp = game_manager.GetComponent<GameManager>().train_hp - attack_damage;
+            }
             attack_timer = 0;
         }
     }
